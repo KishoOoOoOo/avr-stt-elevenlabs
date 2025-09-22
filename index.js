@@ -1,12 +1,12 @@
 /**
- * AVR Speech-to-Text Service using ElevenLabs - FIXED VERSION
+ * AVR Speech-to-Text Service using ElevenLabs
  *
  * This service receives audio data from Asterisk, converts it to WAV format,
  * and uses ElevenLabs API to transcribe the speech to text.
  *
  * @author Agent Voice Response <info@agentvoiceresponse.com>
  * @contributors Giuseppe Careri <info@gcareri.com>, seif walid mamdouh
- * @version 1.1.0 - FIXED
+ * @version 1.1.0
  */
 
 const express = require("express");
@@ -222,7 +222,7 @@ const handleTranscriptionRequest = async (req, res) => {
       file: audioBlob,
       model_id: process.env.ELEVENLABS_MODEL_ID || "scribe_v1",
       num_speakers: 1,
-      language_code: process.env.ELEVENLABS_LANGUAGE_CODE || "ar", // Set to Arabic for better results
+      language_code: process.env.ELEVENLABS_LANGUAGE_CODE || "en", // Set to Arabic for better results
       tag_audio_events: false,
       timestamps_granularity: "none",
       // Add additional parameters for better accuracy
